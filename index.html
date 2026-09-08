@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Bazil Ahamed — UI/UX Designer & Flutter Developer crafting intuitive mobile apps and data-driven experiences. Explore projects, skills, and experience." />
+  <meta name="keywords"
+    content="Bazil Ahamed, UI/UX Designer, Flutter Developer, Portfolio, Mobile App Developer, Firebase, Figma, Power BI" />
+  <meta property="og:title" content="Bazil Ahamed — UI/UX Designer & Flutter Dev" />
+  <meta property="og:description"
+    content="Crafting intuitive mobile apps and data-driven experiences — from Figma wireframes to production Flutter apps." />
+  <meta property="og:type" content="website" />
+  <title>Bazil Ahamed — UI/UX Designer & Flutter Dev</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg-animation">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">B</div>
+      <div class="loader-bar">
+        <div class="loader-fill" id="loaderFill"></div>
+      </div>
+      <span class="loader-text" id="loaderText">Loading...</span>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo-link">
+        <span class="logo-letter">B</span>
+        <span class="logo-text">Bazil Ahamed</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#work" class="nav-link">Work</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions" style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle Theme"
+          style="background: var(--theme-toggle-bg); border: none; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all var(--transition); font-size: 18px; color: var(--text-primary);">
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" style="display:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Menu" style="margin-left: 0;">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mob-link">About</a></li>
+      <li><a href="#work" class="mob-link">Work</a></li>
+      <li><a href="#skills" class="mob-link">Skills</a></li>
+      <li><a href="#contact" class="mob-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+      <canvas id="particleCanvas"></canvas>
+    </div>
+
+    <div class="hero-content">
+
+
+      <h1 class="hero-title" data-reveal>
+        <span class="title-line">Bazil</span>
+        <span class="title-line accent-gradient">Ahamed</span>
+      </h1>
+
+      <div class="hero-roles" data-reveal>
+        <span class="role-tag">UI/UX Designer</span>
+        <span class="role-sep">&amp;</span>
+        <span class="role-tag">Flutter Dev</span>
+      </div>
+
+      <p class="hero-desc" data-reveal>
+        Crafting intuitive mobile apps and data-driven experiences from Figma wireframes to production Flutter apps.
+      </p>
+
+      <div class="hero-actions" data-reveal>
+        <a href="#work" class="btn-primary" id="hero-view-work">
+          <span>View My Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="#contact" class="btn-ghost" id="hero-get-in-touch">Get in Touch</a>
+        <a href="Bazil_Ahamed_Resume.pdf" download="Bazil_Ahamed_Resume.pdf" class="btn-ghost" id="hero-download-cv" style="gap: 8px;">
+          <span>Download CV</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 18px; height: 18px;">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats" data-reveal>
+        <div class="stat-item">
+          <span class="stat-num" data-count="8" data-suffix=".0+">0</span>
+          <span class="stat-label">// cgpa_mca</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="3" data-suffix="+">0</span>
+          <span class="stat-label">// projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="6" data-suffix="+">0</span>
+          <span class="stat-label">// tools</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="2" data-suffix="+">0</span>
+          <span class="stat-label">// internships</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-tech-stack" data-reveal>
+      <span class="tech-pill">Flutter</span>
+      <span class="tech-pill">Dart</span>
+      <span class="tech-pill">Firebase</span>
+      <span class="tech-pill">Figma</span>
+      <span class="tech-pill">Power BI</span>
+      <span class="tech-pill">Excel</span>
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">// who_i_am</span>
+        <h2 class="section-title">A bit about me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-visual" data-reveal>
+          <div class="avatar-card">
+            <div class="avatar-ring">
+              <img src="profile.png" alt="Bazil Ahamed" class="avatar-image" />
+            </div>
+            <div class="avatar-glow"></div>
+          </div>
+        </div>
+        <div class="about-text" data-reveal>
+          <p class="about-intro">
+            I'm a <strong>UI/UX Designer and Flutter Developer</strong> passionate about building products that are not
+            just functional, but delightful. I bridge the gap between design and engineering.
+          </p>
+          <p class="about-body">
+            Currently completing my <strong>Master of Computer Applications (MCA)</strong> with a CGPA of 8.0+, I've
+            shipped real-world mobile apps, analytics dashboards, and design systems across two internships.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon">🎓</div>
+              <div>
+                <strong>MCA Graduate</strong>
+                <span>CGPA 8.0+ · 2024-2026</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">📍</div>
+              <div>
+                <strong>Based in India</strong>
+                <span>Open to remote and relocation</span>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon">🚀</div>
+              <div>
+                <strong>Full-Stack Mobile</strong>
+                <span>Flutter · Firebase · Dart</span>
+              </div>
+            </div>
+          </div>
+          <a href="mailto:bazilahamed891@gmail.com" class="btn-primary btn-sm" id="about-contact-btn">
+            <span>Let's Talk</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATE BANNER -->
+  <div class="cert-banner" data-reveal>
+    <div class="cert-inner">
+      <div class="cert-icon">🏆</div>
+      <div class="cert-text">
+        <strong>Gateway Software Solutions</strong>
+        <span>Internship Certificate · Flutter Developer · Jan-Apr 2026</span>
+      </div>
+      <div class="cert-badge">Certified</div>
+    </div>
+  </div>
+
+  <!-- PROJECTS -->
+  <section class="work" id="work">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">// featured_work</span>
+        <h2 class="section-title">Projects that ship.</h2>
+        <p class="section-sub">End-to-end builds — from research and wireframes to deployed, tested applications.</p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card card-featured" data-reveal id="project-mycampus">
+          <div class="project-num">01</div>
+          <div class="project-header">
+            <div class="project-icon p-icon-1">📱</div>
+            <div class="project-meta-top">
+              <span class="project-year">2026</span>
+              <span class="project-cat">Mobile App</span>
+            </div>
+          </div>
+          <h3 class="project-name">MyCampus College Portal</h3>
+          <p class="project-desc">A full-featured cross-platform mobile application for college management covering
+            student admissions, fee tracking, faculty dashboards, and internal announcements built with Flutter and
+            Firebase.</p>
+          <div class="project-tags">
+            <span class="ptag">Flutter</span>
+            <span class="ptag">Firebase</span>
+            <span class="ptag">Dart</span>
+            <span class="ptag">Firestore</span>
+            <span class="ptag">Auth</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-bar">
+              <div class="project-bar-fill" style="width: 90%"></div>
+            </div>
+            <span class="project-status">Shipped</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal id="project-analytics">
+          <div class="project-num">02</div>
+          <div class="project-header">
+            <div class="project-icon p-icon-2">📊</div>
+            <div class="project-meta-top">
+              <span class="project-year">2025</span>
+              <span class="project-cat">Business Analytics</span>
+            </div>
+          </div>
+          <h3 class="project-name">Student Analytics Dashboard</h3>
+          <p class="project-desc">An interactive Power BI dashboard visualising student performance metrics, attendance
+            patterns, and grade distributions enabling faculty to identify at-risk students in real time.</p>
+          <div class="project-tags">
+            <span class="ptag">Power BI</span>
+            <span class="ptag">Excel</span>
+            <span class="ptag">DAX</span>
+            <span class="ptag">Data Modelling</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-bar">
+              <div class="project-bar-fill" style="width: 100%"></div>
+            </div>
+            <span class="project-status">Delivered</span>
+          </div>
+        </article>
+
+        <article class="project-card" data-reveal id="project-hopewell">
+          <div class="project-num">03</div>
+          <div class="project-header">
+            <div class="project-icon p-icon-3">🎨</div>
+            <div class="project-meta-top">
+              <span class="project-year">2025</span>
+              <span class="project-cat">UI/UX Design</span>
+            </div>
+          </div>
+          <h3 class="project-name">Hope Well Hospitality UI</h3>
+          <p class="project-desc">A full UI/UX design system for a hospitality management app covering booking flows,
+            staff dashboards, and guest-facing interfaces designed in Figma with accessibility-first principles.</p>
+          <div class="project-tags">
+            <span class="ptag">Figma</span>
+            <span class="ptag">UI/UX</span>
+            <span class="ptag">Design System</span>
+            <span class="ptag">Prototyping</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-bar">
+              <div class="project-bar-fill" style="width: 88%"></div>
+            </div>
+            <span class="project-status">Designed</span>
+          </div>
+        </article>
+
+        <article class="project-card card-live" data-reveal id="project-weather">
+          <div class="project-num">04</div>
+          <div class="project-header">
+            <div class="project-icon p-icon-4">🌤️</div>
+            <div class="project-meta-top">
+              <span class="project-year">2025</span>
+              <span class="project-cat">Web App</span>
+            </div>
+          </div>
+          <h3 class="project-name">Weather Conditions App</h3>
+          <p class="project-desc">A real-time weather web app that fetches live conditions by location displaying
+            temperature, humidity, wind speed, and weather status with a clean, responsive UI. Built during the Prodigy
+            Infotech internship.</p>
+          <div class="project-tags">
+            <span class="ptag">JavaScript</span>
+            <span class="ptag">Weather API</span>
+            <span class="ptag">HTML/CSS</span>
+            <span class="ptag">Responsive</span>
+          </div>
+          <div class="project-footer">
+            <div class="project-bar">
+              <div class="project-bar-fill" style="width: 100%"></div>
+            </div>
+            <a href="#" class="project-live-link" id="weather-live-link">Live Demo ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">// capabilities</span>
+        <h2 class="section-title">Skills &amp; Tools</h2>
+        <p class="section-sub">A dual-track skillset spanning design and development.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skills-col" data-reveal>
+          <h3 class="skills-col-title">// Technical Skills</h3>
+          <div class="skill-bars">
+            <div class="skill-item" id="skill-flutter">
+              <div class="skill-info"><span class="skill-name">Flutter / Dart</span><span class="skill-pct">90%</span>
+              </div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="90" style="--bar-color: #54C5F8;"></div>
+              </div>
+            </div>
+            <div class="skill-item" id="skill-firebase">
+              <div class="skill-info"><span class="skill-name">Firebase</span><span class="skill-pct">85%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="85" style="--bar-color: #FFA000;"></div>
+              </div>
+            </div>
+            <div class="skill-item" id="skill-figma">
+              <div class="skill-info"><span class="skill-name">Figma / UI Design</span><span
+                  class="skill-pct">88%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="88" style="--bar-color: #A259FF;"></div>
+              </div>
+            </div>
+            <div class="skill-item" id="skill-powerbi">
+              <div class="skill-info"><span class="skill-name">Power BI</span><span class="skill-pct">82%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="82" style="--bar-color: #F2C811;"></div>
+              </div>
+            </div>
+            <div class="skill-item" id="skill-excel">
+              <div class="skill-info"><span class="skill-name">MS Excel</span><span class="skill-pct">80%</span></div>
+              <div class="skill-track">
+                <div class="skill-fill" data-width="80" style="--bar-color: #21A366;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills-col tools-col" data-reveal>
+          <h3 class="skills-col-title">// Tools &amp; Platforms</h3>
+          <div class="tools-grid">
+            <div class="tool-chip" id="tool-flutter">
+              <div class="tool-icon" style="background: linear-gradient(135deg,#54C5F8,#01579B);">
+                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                  <path
+                    d="M14.314 0L2.3 12 6 15.7 21.684 0h-7.37zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z" />
+                </svg>
+              </div>
+              <span>Flutter</span>
+            </div>
+            <div class="tool-chip" id="tool-firebase">
+              <div class="tool-icon" style="background: linear-gradient(135deg,#FFCA28,#F57C00);">
+                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                  <path
+                    d="M3.89 15.672L6.255.461A.341.341 0 016.79.288l2.306 4.143 1.185-2.222a.337.337 0 01.6 0L20.218 15.67 3.89 15.672z" />
+                </svg>
+              </div>
+              <span>Firebase</span>
+            </div>
+            <div class="tool-chip" id="tool-figma">
+              <div class="tool-icon" style="background: linear-gradient(135deg,#A259FF,#1ABCFE);">
+                <svg viewBox="0 0 24 24" fill="white" width="22" height="22">
+                  <path
+                    d="M8 24c2.208 0 4-1.792 4-4v-4H8c-2.208 0-4 1.792-4 4s1.792 4 4 4zm0-12H4C1.792 12 0 13.792 0 16s1.792 4 4 4h4V12zm0-12C5.792 0 4 1.792 4 4s1.792 4 4 4h4V4c0-2.208-1.792-4-4-4zm8 0h-4v8h4c2.208 0 4-1.792 4-4s-1.792-4-4-4zm0 10c-2.208 0-4 1.792-4 4s1.792 4 4 4 4-1.792 4-4-1.792-4-4-4z" />
+                </svg>
+              </div>
+              <span>Figma</span>
+            </div>
+            <div class="tool-chip" id="tool-powerbi">
+              <div class="tool-icon" style="background: linear-gradient(135deg,#F2C811,#E97627);">
+                <span style="font-size:22px;">📊</span>
+              </div>
+              <span>Power BI</span>
+            </div>
+            <div class="tool-chip" id="tool-dart">
+              <div class="tool-icon" style="background: linear-gradient(135deg,#00B4AB,#00D2E9);">
+                <svg viewBox="0 0 24 24" fill="white" width="20" height="20">
+                  <path
+                    d="M4.105 4.105S9.158 1.58 11.684.316a3.079 3.079 0 011.481-.315c.766.047 1.677.788 1.677.788L24 9.948v9.789l-9.789 4.263-9.106-10.979V4.105z" />
+                </svg>
+              </div>
+              <span>Dart</span>
+            </div>
+            <div class="tool-chip" id="tool-excel">
+              <div class="tool-icon" style="background: linear-gradient(135deg,#21A366,#1E7E34);">
+                <span style="font-size:22px;">📈</span>
+              </div>
+              <span>MS Excel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">// experience</span>
+        <h2 class="section-title">Where I've worked.</h2>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item" data-reveal id="exp-gateway">
+          <div class="timeline-year">2026</div>
+          <div class="timeline-dot">
+            <div class="dot-ring"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">Flutter Developer Intern</h3>
+                <span class="tc-company">Gateway Software Solution</span>
+              </div>
+              <span class="tc-period">Jan 2026 – Apr 2026</span>
+            </div>
+            <p class="tc-desc">Built and shipped a full-featured college management mobile app using Flutter and
+              Firebase. Implemented real-time database operations, authentication flows, and complex UI components
+              following Material Design 3 principles. Also developed and deployed a live Weather Conditions web app
+              during the internship.</p>
+            <div class="tc-tags">
+              <span class="etag">Flutter</span>
+              <span class="etag">Firebase</span>
+              <span class="etag">Dart</span>
+              <span class="etag">JavaScript</span>
+              <span class="etag">Mobile Dev</span>
+            </div>
+            <div class="tc-cert">
+              🏆 <strong>Internship Certificate Issued</strong>
+              <div class="tc-cert-img">
+                <a href="gateway_certificate.png" target="_blank">
+                  <img src="gateway_certificate.png" alt="Gateway Software Solutions Certificate" loading="lazy" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal id="exp-anudip">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-dot">
+            <div class="dot-ring"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">Business Analytics Trainee</h3>
+                <span class="tc-company">Anudip Foundation</span>
+              </div>
+              <span class="tc-period">2025</span>
+            </div>
+            <p class="tc-desc">Designed and delivered interactive dashboards in Power BI for student performance
+              tracking. Built data models using DAX, integrated multiple Excel data sources, and presented insights to
+              stakeholders. Reduced repetitive data entry workflows and manual errors by 25% through workflow
+              automation.</p>
+            <div class="tc-tags">
+              <span class="etag">Power BI</span>
+              <span class="etag">Excel</span>
+              <span class="etag">DAX</span>
+              <span class="etag">Business Analytics</span>
+            </div>
+            <div class="tc-achievement">📉 <strong>25% reduction</strong> in data entry errors through automation</div>
+            <div class="tc-cert">
+              🏆 <strong>Certificate of Merit Issued</strong>
+              <div class="tc-cert-img">
+                <a href="anudip_certificate.png" target="_blank">
+                  <img src="anudip_certificate.png" alt="Anudip Foundation Certificate" loading="lazy" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-reveal id="exp-futuro">
+          <div class="timeline-year">2025</div>
+          <div class="timeline-dot">
+            <div class="dot-ring"></div>
+          </div>
+          <div class="timeline-card">
+            <div class="tc-header">
+              <div>
+                <h3 class="tc-role">UI/UX Designer</h3>
+                <span class="tc-company">Futuro Focus</span>
+              </div>
+              <span class="tc-period">2025</span>
+            </div>
+            <p class="tc-desc">Designed end-to-end UI systems for hospitality and service-based apps. Delivered
+              wireframes, component libraries, and clickable prototypes in Figma, following accessibility guidelines and
+              design system best practices.</p>
+            <div class="tc-tags">
+              <span class="etag">Figma</span>
+              <span class="etag">Prototyping</span>
+              <span class="etag">Design Systems</span>
+              <span class="etag">UX Research</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="education" id="education">
+    <div class="container">
+      <div class="section-header" data-reveal>
+        <span class="section-label">// education</span>
+        <h2 class="section-title">Academic background.</h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card" data-reveal id="edu-mca">
+          <div class="edu-badge">MCA</div>
+          <div class="edu-info">
+            <h3>Master of Computer Applications</h3>
+            <span class="edu-college"
+              style="display:block; margin-top:4px; font-weight:500; color:var(--text-secondary);">Measi Institute of
+              Information Technology</span>
+            <span class="edu-duration">2024 – 2026</span>
+            <div class="edu-cgpa">
+              <span class="cgpa-num">8.0+</span>
+              <span class="cgpa-label">CGPA</span>
+            </div>
+            <span class="edu-status completed">Completed</span>
+          </div>
+        </div>
+        <div class="edu-card" data-reveal id="edu-bcom">
+          <div class="edu-badge">B.Com</div>
+          <div class="edu-info">
+            <h3>Bachelor of Commerce</h3>
+            <span class="edu-sub">with Computer Application</span>
+            <span class="edu-college"
+              style="display:block; margin-top:4px; font-weight:500; color:var(--text-secondary);">Syed Ammal Arts and
+              Science College</span>
+            <span class="edu-duration">2021 – 2024</span>
+            <div class="edu-cgpa">
+              <span class="cgpa-num">7.5</span>
+              <span class="cgpa-label">CGPA</span>
+            </div>
+            <span class="edu-status completed">Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-inner" data-reveal>
+        <div class="contact-heading">
+          <span class="section-label">// lets_connect</span>
+          <h2 class="contact-title">Let's build something<br /><span class="accent-gradient">great together.</span></h2>
+          <p class="contact-sub">Open to full-time roles, internships, and freelance projects in UI/UX design or mobile
+            development.</p>
+        </div>
+
+        <div class="contact-cards">
+          <a href="mailto:bazilahamed891@gmail.com" class="contact-card" id="contact-email">
+            <div class="cc-icon">✉️</div>
+            <div class="cc-label">Email</div>
+            <div class="cc-value">bazilahamed891@gmail.com</div>
+            <div class="cc-arrow">↗</div>
+          </a>
+          <a href="tel:+918940224121" class="contact-card" id="contact-phone">
+            <div class="cc-icon">📞</div>
+            <div class="cc-label">Phone</div>
+            <div class="cc-value">+91 8940224121</div>
+            <div class="cc-arrow">↗</div>
+          </a>
+          <a href="https://github.com/BazilAhamed-S" target="_blank" rel="noopener" class="contact-card"
+            id="contact-github">
+            <div class="cc-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                <path
+                  d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+              </svg>
+            </div>
+            <div class="cc-label">GitHub</div>
+            <div class="cc-value">BazilAhamed-S</div>
+            <div class="cc-arrow">↗</div>
+          </a>
+        </div>
+
+        <a href="#" class="btn-primary btn-large" id="contact-resume-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-letter">B</span>
+        <span>Bazil Ahamed</span>
+      </div>
+      <p class="footer-copy">Designed and built by Bazil Ahamed · 2024</p>
+      <div class="footer-links">
+        <a href="#hero" id="footer-top-link">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
